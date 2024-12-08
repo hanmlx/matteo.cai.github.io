@@ -1,0 +1,685 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>我的收藏</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1566f924-63f1-81cb-b1ca-d9fdf0aed0d5" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🔖</span></div><h1 class="page-title">我的收藏</h1><p class="page-description"></p></header><div class="page-body"><div id="1566f924-63f1-818c-b865-c31eb5cfe015" class="column-list"><div id="1566f924-63f1-815e-8027-fd2ee3bcbe0b" style="width:18.75%" class="column"><div><p id="1566f924-63f1-8128-b0e2-d29e14af5925" class=""><strong><a href="../%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%201566f92463f180c59280cee6087d2880.html">主页</a></strong><div class="indented"><figure id="1566f924-63f1-8199-9970-f7c1a67dfa06" class="link-to-page"><a href="%E6%97%A5%E5%B8%B8%E7%A2%8E%E7%A2%8E%E5%BF%B5%201566f92463f181999970f7c1a67dfa06.html"><span class="icon">📣</span>日常碎碎念</a></figure><figure id="1566f924-63f1-81ed-b16b-c5a25dcf97ed" class="link-to-page"><a href="%E6%91%84%E5%BD%B1%201566f92463f181edb16bc5a25dcf97ed.html"><span class="icon">📷</span>摄影</a></figure><figure id="1566f924-63f1-812f-87ca-db7ac4e14990" class="link-to-page"><a href="%E6%96%87%E7%AB%A0%201566f92463f1812f87cadb7ac4e14990.html"><span class="icon">✏️</span>文章</a></figure><figure id="1566f924-63f1-8141-900e-f9c945915e03" class="link-to-page"><a href="%E5%BD%B1%E9%9F%B3%E5%A8%B1%E4%B9%90%201566f92463f18141900ef9c945915e03.html"><span class="icon">🍿</span>影音娱乐</a></figure><figure id="1566f924-63f1-812f-9f2d-ed1259742ba2" class="link-to-page"><a href="%E5%92%8C%E6%88%91%E4%BA%A4%E6%9C%8B%E5%8F%8B%201566f92463f1812f9f2ded1259742ba2.html"><span class="icon">👭</span>和我交朋友</a></figure></div></p></div></div><div id="1566f924-63f1-8177-a36e-da04422379cd" style="width:81.25%" class="column"><div id="1566f924-63f1-81ae-ae78-ff82c6642ab5" class="collection-content"><h4 class="collection-title">网址推荐</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesTitle"><path d="M0.637695 13.1914C1.0957 13.1914 1.32812 13 1.47852 12.5215L2.24414 10.3887H6.14746L6.90625 12.5215C7.05664 13 7.2959 13.1914 7.74707 13.1914C8.22559 13.1914 8.5332 12.9043 8.5332 12.4531C8.5332 12.2891 8.50586 12.1523 8.44434 11.9678L5.41602 3.79199C5.2041 3.21777 4.82129 2.9375 4.19922 2.9375C3.60449 2.9375 3.21484 3.21777 3.0166 3.78516L-0.0322266 12.002C-0.09375 12.1797 -0.121094 12.3232 -0.121094 12.4668C-0.121094 12.918 0.166016 13.1914 0.637695 13.1914ZM2.63379 9.12402L4.17871 4.68066H4.21973L5.76465 9.12402H2.63379ZM12.2793 13.2324C13.3115 13.2324 14.2891 12.6787 14.7129 11.8037H14.7402V12.5762C14.7471 12.9863 15.0273 13.2393 15.4238 13.2393C15.834 13.2393 16.1143 12.9795 16.1143 12.5215V8.00977C16.1143 6.49902 14.9658 5.52148 13.1543 5.52148C11.7666 5.52148 10.6592 6.08887 10.2695 6.99121C10.1943 7.15527 10.1533 7.3125 10.1533 7.46289C10.1533 7.81152 10.4062 8.04395 10.7686 8.04395C11.0215 8.04395 11.2129 7.94824 11.3496 7.73633C11.7529 6.99121 12.2861 6.65625 13.1064 6.65625C14.0977 6.65625 14.6992 7.20996 14.6992 8.1123V8.67285L12.5664 8.7959C10.7686 8.8916 9.77734 9.69824 9.77734 11.0107C9.77734 12.3369 10.8096 13.2324 12.2793 13.2324ZM12.6621 12.1387C11.8008 12.1387 11.2129 11.667 11.2129 10.9561C11.2129 10.2725 11.7598 9.82129 12.7578 9.75977L14.6992 9.62988V10.3203C14.6992 11.3457 13.7969 12.1387 12.6621 12.1387Z"></path></svg></span>名称</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesUrl"><path d="M7.69922 10.8945L8.73828 9.84863C7.91797 9.77344 7.34375 9.51367 6.91992 9.08984C5.76465 7.93457 5.76465 6.29395 6.91309 5.14551L9.18262 2.87598C10.3379 1.7207 11.9717 1.7207 13.127 2.87598C14.2891 4.04492 14.2822 5.67188 13.1338 6.82031L11.958 7.99609C12.1768 8.49512 12.2451 9.10352 12.1289 9.62988L14.0908 7.6748C15.7725 6 15.7793 3.62109 14.084 1.92578C12.3887 0.223633 10.0098 0.237305 8.33496 1.91211L5.95605 4.29785C4.28125 5.97266 4.26758 8.35156 5.96289 10.0469C6.36621 10.4434 6.90625 10.7441 7.69922 10.8945ZM8.30078 5.13184L7.26855 6.17773C8.08203 6.25293 8.66309 6.51953 9.08008 6.93652C10.2422 8.09863 10.2422 9.73242 9.08691 10.8809L6.81738 13.1504C5.66211 14.3057 4.03516 14.3057 2.87305 13.1504C1.71094 11.9883 1.71777 10.3545 2.87305 9.20605L4.04199 8.03027C3.83008 7.53125 3.75488 6.92969 3.87109 6.39648L1.91602 8.35156C0.234375 10.0264 0.227539 12.4121 1.92285 14.1074C3.61816 15.8027 5.99707 15.7891 7.67188 14.1143L10.0439 11.7354C11.7256 10.0537 11.7324 7.6748 10.0371 5.98633C9.64062 5.58301 9.10059 5.28223 8.30078 5.13184Z"></path></svg></span>网址</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>标签</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>简介</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>收费情况</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>备注</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>相关技巧</th></tr></thead><tbody><tr id="1566f924-63f1-81de-b294-e43cbf63d046"><td class="cell-title"><a href="%E6%88%91%E7%9A%84%E6%94%B6%E8%97%8F%201566f92463f181cbb1cad9fdf0aed0d5/%E7%BD%91%E5%9D%80%E6%8E%A8%E8%8D%90%201566f92463f181aeae78ff82c6642ab5/FreeVector%201566f92463f181deb294e43cbf63d046.html">FreeVector</a></td><td class="cell-4Ur0"><a href="https://www.freevector.com" class="url-value">https://www.freevector.com</a></td><td class="cell-_VOL"><span class="selected-value select-value-color-orange">图片处理</span><span class="selected-value select-value-color-green">在线</span><span class="selected-value select-value-color-yellow">素材</span><span class="selected-value select-value-color-blue">资源</span></td><td class="cell-/`j#">超精美的免费矢量素材库。详情见内容</td><td class="cell-q.GH"><span class="selected-value select-value-color-purple">免费免登陆</span></td><td class="cell-@J.|"></td><td class="cell-@8qA"></td></tr><tr id="1566f924-63f1-81f1-866e-ca813b6f1809"><td class="cell-title"><a href="%E6%88%91%E7%9A%84%E6%94%B6%E8%97%8F%201566f92463f181cbb1cad9fdf0aed0d5/%E7%BD%91%E5%9D%80%E6%8E%A8%E8%8D%90%201566f92463f181aeae78ff82c6642ab5/%E7%BD%91%E6%98%93%E6%95%B0%E8%AF%BB%201566f92463f181f1866eca813b6f1809.html">网易数读</a></td><td class="cell-4Ur0"><a href="https://data.163.com/special/datablog/" class="url-value">https://data.163.com/special/datablog/</a></td><td class="cell-_VOL"><span class="selected-value select-value-color-gray">PPT</span><span class="selected-value select-value-color-yellow">写作</span><span class="selected-value select-value-color-yellow">数据</span></td><td class="cell-/`j#"></td><td class="cell-q.GH"><span class="selected-value select-value-color-purple">免费免登陆</span></td><td class="cell-@J.|"></td><td class="cell-@8qA"></td></tr><tr id="1566f924-63f1-815e-a2d1-eddec2a1a823"><td class="cell-title"><a href="%E6%88%91%E7%9A%84%E6%94%B6%E8%97%8F%201566f92463f181cbb1cad9fdf0aed0d5/%E7%BD%91%E5%9D%80%E6%8E%A8%E8%8D%90%201566f92463f181aeae78ff82c6642ab5/%E7%9F%B3%E5%A2%A8%E6%96%87%E6%A1%A3%201566f92463f1815ea2d1eddec2a1a823.html">石墨文档</a></td><td class="cell-4Ur0"><a href="https://shimo.im/docs/RPGcxw6VpCgxHYhP/read" class="url-value">https://shimo.im/docs/RPGcxw6VpCgxHYhP/read</a></td><td class="cell-_VOL"></td><td class="cell-/`j#"></td><td class="cell-q.GH"></td><td class="cell-@J.|"></td><td class="cell-@8qA"></td></tr><tr id="1566f924-63f1-81b8-b805-dce912c4abd1"><td class="cell-title"><a href="%E6%88%91%E7%9A%84%E6%94%B6%E8%97%8F%201566f92463f181cbb1cad9fdf0aed0d5/%E7%BD%91%E5%9D%80%E6%8E%A8%E8%8D%90%201566f92463f181aeae78ff82c6642ab5/%E9%9F%B3%E4%B9%90%E8%A7%A3%E6%9E%90(%E6%B3%9B%E7%A7%B0)%201566f92463f181b8b805dce912c4abd1.html">音乐解析(泛称)</a></td><td class="cell-4Ur0"><a href="http://music.onlychen.cn/" class="url-value">http://music.onlychen.cn/</a></td><td class="cell-_VOL"><span class="selected-value select-value-color-gray">下载</span><span class="selected-value select-value-color-default">本地</span><span class="selected-value select-value-color-blue">资源</span><span class="selected-value select-value-color-brown">音乐</span></td><td class="cell-/`j#">在听音乐的时候，时常会遇到某些音乐播放平台因为版权问题某些音乐需要收费来下载或者收听的情况,这种时候就需要使用到这一类音乐解析工具。<br/><br/><strong>音乐解析网站</strong>可以解析出音乐的播放源来达到让用户免费收听的目的。</td><td class="cell-q.GH"><span class="selected-value select-value-color-purple">免费免登陆</span></td><td class="cell-@J.|"><mark class="highlight-red"><strong>注：</strong></mark><strong>*付费类歌曲不可以下载。<br/>*<br/></strong>若网站404，则可以百度搜索<strong>音乐解析，</strong>可轻易找到其他替代网站。</td><td class="cell-@8qA">link：上传到网易云音乐云盘即可随时随地收听付费歌曲</td></tr><tr id="1566f924-63f1-8199-a6e0-c5b6e0d43d69"><td class="cell-title"><a href="%E6%88%91%E7%9A%84%E6%94%B6%E8%97%8F%201566f92463f181cbb1cad9fdf0aed0d5/%E7%BD%91%E5%9D%80%E6%8E%A8%E8%8D%90%201566f92463f181aeae78ff82c6642ab5/%E7%94%B5%E5%BD%B1%E5%A4%A9%E5%A0%82%201566f92463f18199a6e0c5b6e0d43d69.html">电影天堂</a></td><td class="cell-4Ur0"><a href="https://www.dy2018.com/" class="url-value">https://www.dy2018.com/</a></td><td class="cell-_VOL"><span class="selected-value select-value-color-gray">下载</span><span class="selected-value select-value-color-default">本地</span><span class="selected-value select-value-color-pink">电影</span><span class="selected-value select-value-color-default">视频</span><span class="selected-value select-value-color-blue">资源</span><span class="selected-value select-value-color-red">迅雷</span></td><td class="cell-/`j#">院线电影、电视剧下载&amp;高清首发</td><td class="cell-q.GH"><span class="selected-value select-value-color-purple">免费免登陆</span></td><td class="cell-@J.|"><mark class="highlight-red"><strong>注：</strong></mark>*近期的电影可能会没有<strong>高清资源</strong>。需要搭配迅雷使用。</td><td class="cell-@8qA"></td></tr><tr id="1566f924-63f1-81bf-a38b-e79caf09a76e"><td class="cell-title"><a href="%E6%88%91%E7%9A%84%E6%94%B6%E8%97%8F%201566f92463f181cbb1cad9fdf0aed0d5/%E7%BD%91%E5%9D%80%E6%8E%A8%E8%8D%90%201566f92463f181aeae78ff82c6642ab5/Canva%E5%8F%AF%E7%94%BB%201566f92463f181bfa38be79caf09a76e.html">Canva可画</a></td><td class="cell-4Ur0"><a href="https://www.canva.cn/" class="url-value">https://www.canva.cn/</a></td><td class="cell-_VOL"><span class="selected-value select-value-color-orange">图片处理</span><span class="selected-value select-value-color-green">在线</span><span class="selected-value select-value-color-gray">教程</span><span class="selected-value select-value-color-default">设计</span></td><td class="cell-/`j#">Canva是一款在线平面设计工具，提供了海量的免费设计模板，涵盖海报、简历、宣传单页、名片、邀请函、贺卡、Logo、PPT模板、二维码、Banner等数十种设计场景，更有上百款免费字体及百万张正版图片素材可供使用。点击跳转Canva设计学院学习教程：<a href="https://www.canva.cn/learn/canva-101/">玩转Canva</a></td><td class="cell-q.GH"><span class="selected-value select-value-color-default">免费需登录</span><span class="selected-value select-value-color-red">部分浏览需收费</span></td><td class="cell-@J.|"><mark class="highlight-red"><strong>注：</strong></mark>*某些素材使用、保存时需要付费。<br/>*网站有<br/><strong>国际版</strong>，有国内版没有的设计模板，但是打开比较慢。</td><td class="cell-@8qA"></td></tr><tr id="1566f924-63f1-81fd-9b3f-d03a1a40da1f"><td class="cell-title"><a href="%E6%88%91%E7%9A%84%E6%94%B6%E8%97%8F%201566f92463f181cbb1cad9fdf0aed0d5/%E7%BD%91%E5%9D%80%E6%8E%A8%E8%8D%90%201566f92463f181aeae78ff82c6642ab5/Pexels%201566f92463f181fd9b3fd03a1a40da1f.html">Pexels</a></td><td class="cell-4Ur0"><a href="https://www.pexels.com/zh-cn/" class="url-value">https://www.pexels.com/zh-cn/</a></td><td class="cell-_VOL"><span class="selected-value select-value-color-yellow">壁纸</span><span class="selected-value select-value-color-yellow">素材</span><span class="selected-value select-value-color-default">视频</span><span class="selected-value select-value-color-default">设计</span></td><td class="cell-/`j#">才华横溢的摄影作者在这里免费分享最精彩的素材图片和视频,外国网站。</td><td class="cell-q.GH"><span class="selected-value select-value-color-purple">免费免登陆</span></td><td class="cell-@J.|"><mark class="highlight-red"><strong>注：</strong></mark>*网站现在支持中文搜索。<br/>*网站用英文搜索结果和中文搜索结果存在差异。<br/></td><td class="cell-@8qA"></td></tr><tr id="1566f924-63f1-81a8-831d-dd7b81c79f0a"><td class="cell-title"><a href="%E6%88%91%E7%9A%84%E6%94%B6%E8%97%8F%201566f92463f181cbb1cad9fdf0aed0d5/%E7%BD%91%E5%9D%80%E6%8E%A8%E8%8D%90%201566f92463f181aeae78ff82c6642ab5/pixabay%201566f92463f181a8831ddd7b81c79f0a.html">pixabay</a></td><td class="cell-4Ur0"><a href="https://pixabay.com/" class="url-value">https://pixabay.com/</a></td><td class="cell-_VOL"><span class="selected-value select-value-color-yellow">壁纸</span><span class="selected-value select-value-color-yellow">素材</span><span class="selected-value select-value-color-default">设计</span></td><td class="cell-/`j#">超过180万张摄影照片和视频供你选择。</td><td class="cell-q.GH"><span class="selected-value select-value-color-purple">免费免登陆</span></td><td class="cell-@J.|"></td><td class="cell-@8qA"></td></tr><tr id="1566f924-63f1-81e0-a0ea-e37369f7371f"><td class="cell-title"><a href="%E6%88%91%E7%9A%84%E6%94%B6%E8%97%8F%201566f92463f181cbb1cad9fdf0aed0d5/%E7%BD%91%E5%9D%80%E6%8E%A8%E8%8D%90%201566f92463f181aeae78ff82c6642ab5/%E4%BC%98%E4%BC%98%E6%95%99%E7%A8%8B%E7%BD%91%201566f92463f181e0a0eae37369f7371f.html">优优教程网</a></td><td class="cell-4Ur0"><a href="https://uiiiuiii.com/" class="url-value">https://uiiiuiii.com/</a></td><td class="cell-_VOL"><span class="selected-value select-value-color-gray">教程</span><span class="selected-value select-value-color-yellow">素材</span><span class="selected-value select-value-color-default">设计</span></td><td class="cell-/`j#">为零基础、进阶提升和设计自学者提供平面、UI、网页等设计软件教程,由优设网旗下的优设大课堂和基础训练营组成，有PS教程、AE教程、AI教程、C4D教程、手绘教程、摄影教程；找灵感方面有海报设计、UI设计、Banner设计、Logo设计、插画绘画等。</td><td class="cell-q.GH"><span class="selected-value select-value-color-red">部分浏览需收费</span></td><td class="cell-@J.|"><mark class="highlight-red"><strong>注：</strong></mark>*系统学习还是需要报名付费课程。</td><td class="cell-@8qA"></td></tr><tr id="1566f924-63f1-8121-8365-ff9f3904b908"><td class="cell-title"><a href="%E6%88%91%E7%9A%84%E6%94%B6%E8%97%8F%201566f92463f181cbb1cad9fdf0aed0d5/%E7%BD%91%E5%9D%80%E6%8E%A8%E8%8D%90%201566f92463f181aeae78ff82c6642ab5/%E4%BC%98%E8%AE%BE%E7%BD%91%201566f92463f181218365ff9f3904b908.html">优设网</a></td><td class="cell-4Ur0"><a href="https://www.uisdc.com/" class="url-value">https://www.uisdc.com/</a></td><td class="cell-_VOL"><span class="selected-value select-value-color-orange">图片处理</span><span class="selected-value select-value-color-gray">教程</span><span class="selected-value select-value-color-yellow">素材</span><span class="selected-value select-value-color-brown">视频处理</span><span class="selected-value select-value-color-default">设计</span></td><td class="cell-/`j#">设计师交流学习平台，看设计文章，学设计软件教程。</td><td class="cell-q.GH"><span class="selected-value select-value-color-red">部分浏览需收费</span></td><td class="cell-@J.|"></td><td class="cell-@8qA"></td></tr><tr id="1566f924-63f1-8145-aefc-dec2347bb613"><td class="cell-title"><a href="%E6%88%91%E7%9A%84%E6%94%B6%E8%97%8F%201566f92463f181cbb1cad9fdf0aed0d5/%E7%BD%91%E5%9D%80%E6%8E%A8%E8%8D%90%201566f92463f181aeae78ff82c6642ab5/%E7%AB%99%E9%85%B7%201566f92463f18145aefcdec2347bb613.html">站酷</a></td><td class="cell-4Ur0"><a href="https://www.zcool.com.cn/" class="url-value">https://www.zcool.com.cn/</a></td><td class="cell-_VOL"><span class="selected-value select-value-color-gray">下载</span><span class="selected-value select-value-color-orange">图片处理</span><span class="selected-value select-value-color-green">在线</span><span class="selected-value select-value-color-green">字体</span><span class="selected-value select-value-color-yellow">素材</span><span class="selected-value select-value-color-default">设计</span></td><td class="cell-/`j#">主站为<strong>设计师互动平台</strong>站酷网，下属一站式正版视觉内容交易平台——<a href="https://www.hellorf.com/">站酷海洛</a>，艺术设计在线教育平台——<a href="https://www.gogoup.com/">站酷高高手</a>、知识产权服务平台——<a href="https://www.zcoolip.com/">站酷知产</a>，免费&amp;付费字体<a href="https://www.zcool.com.cn/special/zcoolfonts/">站酷字库</a>。</td><td class="cell-q.GH"><span class="selected-value select-value-color-gray">付费需登录</span></td><td class="cell-@J.|"></td><td class="cell-@8qA"></td></tr><tr id="1566f924-63f1-812b-bfc9-d82dfaade554"><td class="cell-title"><a href="%E6%88%91%E7%9A%84%E6%94%B6%E8%97%8F%201566f92463f181cbb1cad9fdf0aed0d5/%E7%BD%91%E5%9D%80%E6%8E%A8%E8%8D%90%201566f92463f181aeae78ff82c6642ab5/ExtractPDF%201566f92463f1812bbfc9d82dfaade554.html">ExtractPDF</a></td><td class="cell-4Ur0"><a href="www.extractpdf.com" class="url-value">www.extractpdf.com</a></td><td class="cell-_VOL"><span class="selected-value select-value-color-purple">PDF</span><span class="selected-value select-value-color-green">在线</span><span class="selected-value select-value-color-green">字体</span><span class="selected-value select-value-color-blue">文档处理</span></td><td class="cell-/`j#">可以免费提取PDF文件中的图片、文字及字体，无需安装，在线操作。</td><td class="cell-q.GH"><span class="selected-value select-value-color-purple">免费免登陆</span></td><td class="cell-@J.|"><mark class="highlight-red"><strong>注：</strong></mark>*最大上传文件为25MB。<br/>*图像以其原始版本和大小提取。不应用图像过滤器及其在PDF中指定的尺寸更改。<br/>*图片类文本无法提取。<br/></td><td class="cell-@8qA"></td></tr><tr id="1566f924-63f1-8171-a94e-f21e21d301ca"><td class="cell-title"><a href="%E6%88%91%E7%9A%84%E6%94%B6%E8%97%8F%201566f92463f181cbb1cad9fdf0aed0d5/%E7%BD%91%E5%9D%80%E6%8E%A8%E8%8D%90%201566f92463f181aeae78ff82c6642ab5/UI%E4%B8%AD%E5%9B%BD%201566f92463f18171a94ef21e21d301ca.html">UI中国</a></td><td class="cell-4Ur0"><a href="https://www.ui.cn/" class="url-value">https://www.ui.cn/</a></td><td class="cell-_VOL"><span class="selected-value select-value-color-orange">图片处理</span><span class="selected-value select-value-color-gray">教程</span><span class="selected-value select-value-color-default">设计</span></td><td class="cell-/`j#">专业的用户体验设计行业媒体、知识分享互动社区、创意整合营销平台。包含学习、展示、外包、竞赛、招聘等，是用户体验设计师的职业成长平台。</td><td class="cell-q.GH"><span class="selected-value select-value-color-blue">浏览观看免费</span><span class="selected-value select-value-color-red">部分浏览需收费</span></td><td class="cell-@J.|"></td><td class="cell-@8qA"></td></tr><tr id="1566f924-63f1-8108-b2fc-cb295e9e7454"><td class="cell-title"><a href="%E6%88%91%E7%9A%84%E6%94%B6%E8%97%8F%201566f92463f181cbb1cad9fdf0aed0d5/%E7%BD%91%E5%9D%80%E6%8E%A8%E8%8D%90%201566f92463f181aeae78ff82c6642ab5/Iconfont%201566f92463f18108b2fccb295e9e7454.html">Iconfont</a></td><td class="cell-4Ur0"><a href="https://www.iconfont.cn/" class="url-value">https://www.iconfont.cn/</a></td><td class="cell-_VOL"><span class="selected-value select-value-color-gray">下载</span><span class="selected-value select-value-color-orange">图片处理</span><span class="selected-value select-value-color-green">在线</span><span class="selected-value select-value-color-yellow">素材</span></td><td class="cell-/`j#">阿里妈妈MUX倾力打造的矢量图标管理、交流平台。<br/>设计师将图标上传到Iconfont平台，用户可以自定义下载多种格式的icon，平台也可将图标转换为字体，便于前端工程师自由调整与调用。<br/></td><td class="cell-q.GH"><span class="selected-value select-value-color-default">免费需登录</span></td><td class="cell-@J.|"></td><td class="cell-@8qA"><a href="https://www.notion.so/48efb4505cde4759beb12116339d13e3?pvs=21">Iconfont丨国内最强图标库入门用法简介</a></td></tr><tr id="1566f924-63f1-815b-999c-f3cec26fcac3"><td class="cell-title"><a href="%E6%88%91%E7%9A%84%E6%94%B6%E8%97%8F%201566f92463f181cbb1cad9fdf0aed0d5/%E7%BD%91%E5%9D%80%E6%8E%A8%E8%8D%90%201566f92463f181aeae78ff82c6642ab5/%E5%A0%86%E7%B3%96%201566f92463f1815b999cf3cec26fcac3.html">堆糖</a></td><td class="cell-4Ur0"><a href="https://www.duitang.com/" class="url-value">https://www.duitang.com/</a></td><td class="cell-_VOL"><span class="selected-value select-value-color-yellow">壁纸</span><span class="selected-value select-value-color-yellow">素材</span></td><td class="cell-/`j#">在堆糖可以收集网络上你喜欢的图片和商品，保存你的设计灵感、计划你的旅行、准备你的换季购物清单等</td><td class="cell-q.GH"><span class="selected-value select-value-color-default">免费需登录</span></td><td class="cell-@J.|"></td><td class="cell-@8qA"></td></tr><tr id="1566f924-63f1-811b-b9a0-dfdd15cf664f"><td class="cell-title"><a href="%E6%88%91%E7%9A%84%E6%94%B6%E8%97%8F%201566f92463f181cbb1cad9fdf0aed0d5/%E7%BD%91%E5%9D%80%E6%8E%A8%E8%8D%90%201566f92463f181aeae78ff82c6642ab5/%E5%BF%83%E7%90%86%E6%88%90%E9%95%BF%201566f92463f1811bb9a0dfdd15cf664f.html">心理成长</a></td><td class="cell-4Ur0"><a href="https://types.yuzeli.com/" class="url-value">https://types.yuzeli.com/</a></td><td class="cell-_VOL"><span class="selected-value select-value-color-blue">测试</span></td><td class="cell-/`j#">较为科学的心理测试网站。</td><td class="cell-q.GH"><span class="selected-value select-value-color-purple">免费免登陆</span></td><td class="cell-@J.|"></td><td class="cell-@8qA"></td></tr><tr id="1566f924-63f1-8159-b471-ce4552b9dd5f"><td class="cell-title"><a href="%E6%88%91%E7%9A%84%E6%94%B6%E8%97%8F%201566f92463f181cbb1cad9fdf0aed0d5/%E7%BD%91%E5%9D%80%E6%8E%A8%E8%8D%90%201566f92463f181aeae78ff82c6642ab5/foter%201566f92463f18159b471ce4552b9dd5f.html">foter</a></td><td class="cell-4Ur0"><a href="https://foter.com/" class="url-value">https://foter.com/</a></td><td class="cell-_VOL"><span class="selected-value select-value-color-gray">下载</span><span class="selected-value select-value-color-yellow">壁纸</span><span class="selected-value select-value-color-yellow">素材</span></td><td class="cell-/`j#">来自世界各地的摄影作者在这里免费分享最精彩的素材图片和视频，完全免费不登陆下载。外国网站。</td><td class="cell-q.GH"><span class="selected-value select-value-color-purple">免费免登陆</span></td><td class="cell-@J.|"><mark class="highlight-red"><strong>注：</strong></mark>*像素低于Pexels，不推荐。</td><td class="cell-@8qA"></td></tr><tr id="1566f924-63f1-8183-974e-cd672a2794e0"><td class="cell-title"><a href="%E6%88%91%E7%9A%84%E6%94%B6%E8%97%8F%201566f92463f181cbb1cad9fdf0aed0d5/%E7%BD%91%E5%9D%80%E6%8E%A8%E8%8D%90%201566f92463f181aeae78ff82c6642ab5/%E6%B1%82%E5%AD%97%E4%BD%93%E7%BD%91%201566f92463f18183974ecd672a2794e0.html">求字体网</a></td><td class="cell-4Ur0"><a href="http://www.qiuziti.com/" class="url-value">http://www.qiuziti.com/</a></td><td class="cell-_VOL"><span class="selected-value select-value-color-gray">下载</span><span class="selected-value select-value-color-green">字体</span><span class="selected-value select-value-color-blue">资源</span></td><td class="cell-/`j#">求字体网是为网友提供的信息共享空间，是供网友在线分享字体素材的开放平台。</td><td class="cell-q.GH"><span class="selected-value select-value-color-purple">免费免登陆</span><span class="selected-value select-value-color-red">部分浏览需收费</span></td><td class="cell-@J.|"></td><td class="cell-@8qA"></td></tr><tr id="1566f924-63f1-81e8-b839-d88f3600a939"><td class="cell-title"><a href="%E6%88%91%E7%9A%84%E6%94%B6%E8%97%8F%201566f92463f181cbb1cad9fdf0aed0d5/%E7%BD%91%E5%9D%80%E6%8E%A8%E8%8D%90%201566f92463f181aeae78ff82c6642ab5/%E7%A7%98%E5%A1%94%E5%86%99%E4%BD%9C%E7%8C%AB%201566f92463f181e8b839d88f3600a939.html">秘塔写作猫</a></td><td class="cell-4Ur0"><a href="https://xiezuocat.com/#/" class="url-value">https://xiezuocat.com/#/</a></td><td class="cell-_VOL"><span class="selected-value select-value-color-yellow">写作</span><span class="selected-value select-value-color-green">在线</span><span class="selected-value select-value-color-blue">文档处理</span><span class="selected-value select-value-color-blue">校对</span></td><td class="cell-/`j#">中文写作校对工具，可以校对字词错误、标点错误、语序错误、语法问题、同意混淆等，并给出修改建议，支持全文分析和智能排版。免费版基本上能满足日常需求。</td><td class="cell-q.GH"><span class="selected-value select-value-color-red">部分浏览需收费</span></td><td class="cell-@J.|"></td><td class="cell-@8qA"></td></tr><tr id="1566f924-63f1-8194-9f35-f8cd9ec78c6c"><td class="cell-title"><a href="%E6%88%91%E7%9A%84%E6%94%B6%E8%97%8F%201566f92463f181cbb1cad9fdf0aed0d5/%E7%BD%91%E5%9D%80%E6%8E%A8%E8%8D%90%201566f92463f181aeae78ff82c6642ab5/%E7%AC%AC%E4%B8%80ppt%201566f92463f181949f35f8cd9ec78c6c.html">第一ppt</a></td><td class="cell-4Ur0"><a href="http://www.1ppt.com/" class="url-value">http://www.1ppt.com/</a></td><td class="cell-_VOL"><span class="selected-value select-value-color-gray">PPT</span><span class="selected-value select-value-color-blue">文档处理</span><span class="selected-value select-value-color-yellow">素材</span></td><td class="cell-/`j#">PPT背景图片，PPT模板免费下载。</td><td class="cell-q.GH"><span class="selected-value select-value-color-purple">免费免登陆</span></td><td class="cell-@J.|"><mark class="highlight-red"><strong>注：</strong></mark>*对内容设计要求不那么高可以选择下载。</td><td class="cell-@8qA"></td></tr><tr id="1566f924-63f1-81e4-99a6-dd0faaaa6895"><td class="cell-title"><a href="%E6%88%91%E7%9A%84%E6%94%B6%E8%97%8F%201566f92463f181cbb1cad9fdf0aed0d5/%E7%BD%91%E5%9D%80%E6%8E%A8%E8%8D%90%201566f92463f181aeae78ff82c6642ab5/%E6%BC%AB%E9%9F%B3%E7%A4%BE%201566f92463f181e499a6dd0faaaa6895.html">漫音社</a></td><td class="cell-4Ur0"><a href="http://www.acgjc.com/" class="url-value">http://www.acgjc.com/</a></td><td class="cell-_VOL"><span class="selected-value select-value-color-gray">下载</span><span class="selected-value select-value-color-blue">资源</span><span class="selected-value select-value-color-brown">音乐</span></td><td class="cell-/`j#">动漫相关的无损音乐下载。有一部分欧美歌曲可以下载到。</td><td class="cell-q.GH"><span class="selected-value select-value-color-purple">免费免登陆</span></td><td class="cell-@J.|"></td><td class="cell-@8qA"></td></tr><tr id="1566f924-63f1-8109-b51f-d4094668b92c"><td class="cell-title"><a href="%E6%88%91%E7%9A%84%E6%94%B6%E8%97%8F%201566f92463f181cbb1cad9fdf0aed0d5/%E7%BD%91%E5%9D%80%E6%8E%A8%E8%8D%90%201566f92463f181aeae78ff82c6642ab5/%E5%9C%A8%E7%BA%BF%E6%8A%A0%E5%9B%BE%201566f92463f18109b51fd4094668b92c.html">在线抠图</a></td><td class="cell-4Ur0"><a href="https://douc.cc/23v0Am" class="url-value">https://douc.cc/23v0Am</a></td><td class="cell-_VOL"><span class="selected-value select-value-color-orange">图片处理</span><span class="selected-value select-value-color-green">在线</span></td><td class="cell-/`j#">秒开，非常流畅，界面简洁，可以自己设置抠图的细致程度</td><td class="cell-q.GH"><span class="selected-value select-value-color-purple">免费免登陆</span></td><td class="cell-@J.|"></td><td class="cell-@8qA"></td></tr><tr id="1566f924-63f1-8134-be52-ed1293d1a9eb"><td class="cell-title"><a href="%E6%88%91%E7%9A%84%E6%94%B6%E8%97%8F%201566f92463f181cbb1cad9fdf0aed0d5/%E7%BD%91%E5%9D%80%E6%8E%A8%E8%8D%90%201566f92463f181aeae78ff82c6642ab5/%E8%99%9A%E5%81%87%E6%88%AA%E5%9B%BE%E5%8A%A9%E6%89%8B%201566f92463f18134be52ed1293d1a9eb.html">虚假截图助手</a></td><td class="cell-4Ur0"><a href="https://douc.cc/2PYp9X" class="url-value">https://douc.cc/2PYp9X</a></td><td class="cell-_VOL"><span class="selected-value select-value-color-orange">图片处理</span></td><td class="cell-/`j#">不要再被伪造的截图收智商税。</td><td class="cell-q.GH"><span class="selected-value select-value-color-purple">免费免登陆</span></td><td class="cell-@J.|"></td><td class="cell-@8qA"></td></tr><tr id="1566f924-63f1-81f5-9380-fd8490d8b61c"><td class="cell-title"><a href="%E6%88%91%E7%9A%84%E6%94%B6%E8%97%8F%201566f92463f181cbb1cad9fdf0aed0d5/%E7%BD%91%E5%9D%80%E6%8E%A8%E8%8D%90%201566f92463f181aeae78ff82c6642ab5/socialbook%E6%8A%A0%E5%9B%BE%201566f92463f181f59380fd8490d8b61c.html">socialbook抠图</a></td><td class="cell-4Ur0"><a href="https://socialbook.io/remove-background" class="url-value">https://socialbook.io/remove-background</a></td><td class="cell-_VOL"><span class="selected-value select-value-color-orange">图片处理</span></td><td class="cell-/`j#">最佳免费背景去除剂在线工具，去除背景-SocialBook<br/>世界上最强大最精准的AI 人物背景可移除算法-100％自动，秒出结果<br/></td><td class="cell-q.GH"><span class="selected-value select-value-color-purple">免费免登陆</span></td><td class="cell-@J.|"></td><td class="cell-@8qA"></td></tr><tr id="1566f924-63f1-811e-8a15-efd7f1719fab"><td class="cell-title"><a href="%E6%88%91%E7%9A%84%E6%94%B6%E8%97%8F%201566f92463f181cbb1cad9fdf0aed0d5/%E7%BD%91%E5%9D%80%E6%8E%A8%E8%8D%90%201566f92463f181aeae78ff82c6642ab5/%E7%88%B1%E8%8C%83%E5%84%BF%201566f92463f1811e8a15efd7f1719fab.html">爱范儿</a></td><td class="cell-4Ur0"><a href="https://www.ifanr.com/author/delmar" class="url-value">https://www.ifanr.com/author/delmar</a></td><td class="cell-_VOL"><span class="selected-value select-value-color-gray">文章</span></td><td class="cell-/`j#">国内聚焦创新及消费科技领域的线上媒体</td><td class="cell-q.GH"><span class="selected-value select-value-color-blue">浏览观看免费</span></td><td class="cell-@J.|"></td><td class="cell-@8qA"></td></tr><tr id="1566f924-63f1-81c0-bac7-d7b46916dba3"><td class="cell-title"><a href="%E6%88%91%E7%9A%84%E6%94%B6%E8%97%8F%201566f92463f181cbb1cad9fdf0aed0d5/%E7%BD%91%E5%9D%80%E6%8E%A8%E8%8D%90%201566f92463f181aeae78ff82c6642ab5/generated%20photos%201566f92463f181c0bac7d7b46916dba3.html">generated photos</a></td><td class="cell-4Ur0"><a href="https://generated.photos/" class="url-value">https://generated.photos/</a></td><td class="cell-_VOL"><span class="selected-value select-value-color-pink">AI</span><span class="selected-value select-value-color-brown">人像</span><span class="selected-value select-value-color-yellow">素材</span></td><td class="cell-/`j#">这些人像都是算法生成的，不是真人，更不可能有侵权的风险，而且全部免费可商用！条件很简单，你只需要在作品中放上他们的官网链接即可。当然，你也可以直接下载所有人脸，但资源存在了一个（不存在的）网盘中：Google Drive：<a href="http://t.cn/AiEsraQu">http://t.cn/AiEsraQu</a></td><td class="cell-q.GH"><span class="selected-value select-value-color-purple">免费免登陆</span></td><td class="cell-@J.|"></td><td class="cell-@8qA"></td></tr><tr id="1566f924-63f1-81ae-b1e9-ffa9621ed586"><td class="cell-title"><a href="%E6%88%91%E7%9A%84%E6%94%B6%E8%97%8F%201566f92463f181cbb1cad9fdf0aed0d5/%E7%BD%91%E5%9D%80%E6%8E%A8%E8%8D%90%201566f92463f181aeae78ff82c6642ab5/%E7%88%B1%E8%B1%86%E6%90%9C%E7%B4%A2%201566f92463f181aeb1e9ffa9621ed586.html">爱豆搜索</a></td><td class="cell-4Ur0"><a href="https://www.sov5.cn/engines/imoMqPbMiS" class="url-value">https://www.sov5.cn/engines/imoMqPbMiS</a></td><td class="cell-_VOL"><span class="selected-value select-value-color-gray">豆瓣</span></td><td class="cell-/`j#">豆瓣任意用户所有发言记录、转发、收藏和赞可查询。</td><td class="cell-q.GH"><span class="selected-value select-value-color-orange">每日有使用限制</span></td><td class="cell-@J.|"><mark class="highlight-red"><strong>注：</strong></mark><strong>*所查询的用户的曾用名也可以链接搜索该用户新名称的发言记录；<br/>可能会限制搜索额度。<br/></strong></td><td class="cell-@8qA"></td></tr><tr id="1566f924-63f1-8169-b88c-cabe97b033c4"><td class="cell-title"><a href="%E6%88%91%E7%9A%84%E6%94%B6%E8%97%8F%201566f92463f181cbb1cad9fdf0aed0d5/%E7%BD%91%E5%9D%80%E6%8E%A8%E8%8D%90%201566f92463f181aeae78ff82c6642ab5/%E5%B0%8F%E8%9C%9C%E8%9C%82%E5%9C%A8%E7%BA%BF%E7%94%B5%E5%AD%90%E4%B9%A6%E8%BD%AC%E6%8D%A2%E5%99%A8%201566f92463f18169b88ccabe97b033c4.html">小蜜蜂在线电子书转换器</a></td><td class="cell-4Ur0"><a href="http://cn.epubee.com/" class="url-value">http://cn.epubee.com/</a></td><td class="cell-_VOL"><span class="selected-value select-value-color-orange">格式转换</span><span class="selected-value select-value-color-brown">电子书</span></td><td class="cell-/`j#">免费电子书格式转换，转换的格式支持各种阅读软件与设备.质量无损，转换速度快，简单易用。</td><td class="cell-q.GH"><span class="selected-value select-value-color-purple">免费免登陆</span><span class="selected-value select-value-color-orange">每日有使用限制</span></td><td class="cell-@J.|"><mark class="highlight-red"><strong>注：</strong></mark>* 下载<a href="http://cn.epubee.com/manager.html">桌面版</a>，除了电子书转换、管理，还能给DRM脱壳。<br/>* 支持单个文件大小高达100MB<br/>* 支持批量上传和处理<br/>* 支持PDF重排，即PDF转为PDF A6<br/>* 支持PDF A6输出，便于移动设备如Kindle，Kobo，掌阅，手机等<br/>* 页面上没有烦人的广告，清晰安全<br/></td><td class="cell-@8qA"></td></tr></tbody></table><br/><br/></div></div></div><p id="1566f924-63f1-8113-8cbe-e65fbf9e00e4" class="">
+</p><div><hr id="1566f924-63f1-81f6-829b-decb8bfc6c0d"/><p id="1566f924-63f1-8104-b055-d1c3d43b03f6" class="">Copyright © 2024-2025           </p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
